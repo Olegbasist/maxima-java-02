@@ -2,13 +2,13 @@ package org.example;
 
 // 12.09.2022 Создать новый maven-проект и репозиторий maxima-java-02
 
-//12.09.2022  В pom.xml установить версию junit 4.13
+// 12.09.2022  В pom.xml установить версию junit 4.13
 
-// TODO: 12.09.2022  Описать класс City (город) со свойствами:
+// 12.09.2022  Описать класс City (город) со свойствами:
 //        name — имя, строка.
 //        distanceKm — расстояние, число
 
-// TODO: 12.09.2022  Описать класс Transport (транспортное средство) со свойствами:
+// 12.09.2022  Описать класс Transport (транспортное средство) со свойствами:
 //        name — имя, строка.
 //        capacity — грузоподъемность, число.
 //        speed — скорость, число.
@@ -23,6 +23,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        City.printDistance();
+
+
     }
 }
