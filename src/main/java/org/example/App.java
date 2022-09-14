@@ -24,11 +24,19 @@ public class App
     public static void main( String[] args )
     {
         Transport telega = new Transport();
+        telega.name = "Телега";
+        telega.capacity = 260;
+        telega.speed = 5;
+        telega.costOfKm = 0.87F;
         System.out.println(telega.name+ " вмещает " +telega.capacity+ "Кг. груза, едет со скоростью " +telega.speed+ "Км/ч и стоит " +telega.costOfKm+ " рубля за 1Км. пути");
 
         int cargoWeight = 60;
+
         City city = new City();
-        System.out.println("Транспортировка груза весом " +cargoWeight+ "Кг. до пункта " +city.name+ " будет стоить " +(telega.costOfKm*cargoWeight*city.distanceKm)+ " рублей");
+        city.name = "'Место назначения'";
+        city.distanceKm = 1896;
+        city.printDistance();
+        System.out.println("Транспортировка груза весом " +cargoWeight+ "Кг. до пункта " +city.name+ " будет стоить " +(telega.costOfKm*(telega.capacity/100*cargoWeight/100)*city.distanceKm)+ " рублей");
 
 
     }

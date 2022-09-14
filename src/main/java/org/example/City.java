@@ -6,14 +6,12 @@ package org.example;
 
 public class City
 {
-    String name = "Городок";
-    int distanceKm = 685;
+    String name;
+    int distanceKm;
 
-   public static void printDistance()
+   public void printDistance()
     {
-        String name = "Городочек";
-        int distanceKm = 1546;
-        System.out.println(name+ " находится в " +distanceKm+ " Км.");
+        System.out.println(name+ " находится на расстоянии " +distanceKm+ " Км.");
     }
 
 }

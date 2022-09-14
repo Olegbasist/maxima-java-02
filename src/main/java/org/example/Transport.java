@@ -8,7 +8,7 @@ package org.example;
 
 public class Transport
 {
-    String name = "Телега";
+    String name;
     int capacity = 180;
     int speed = 10;
     float costOfKm = 1.5F;
