@@ -8,8 +8,8 @@ package org.example;
 
 public class Transport
 {
-    String name;
-    int capacity;
-    int speed;
-    float costOfKm;
+    String name = "Телега";
+    int capacity = 180;
+    int speed = 10;
+    float costOfKm = 1.5F;
 }
