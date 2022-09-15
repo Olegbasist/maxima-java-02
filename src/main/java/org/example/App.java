@@ -23,21 +23,23 @@ public class App
 {
     public static void main( String[] args )
     {
-        Transport telega = new Transport();
-        telega.name = "Телега";
-        telega.capacity = 260;
-        telega.speed = 5;
-        telega.costOfKm = 0.87F;
-        System.out.println(telega.name+ " вмещает " +telega.capacity+ "Кг. груза, едет со скоростью " +telega.speed+ "Км/ч и стоит " +telega.costOfKm+ " рубля за 1Км. пути");
+        Transport vehicle = new Transport();
+        vehicle.setName("Телега");
+        vehicle.setCapacity(242);
+        vehicle.setSpeed(4);
+        vehicle.setCostOfKm(0.52F);
+        System.out.println(vehicle.name+ " вмещает " +vehicle.capacity+ "Кг. груза, едет со скоростью " +vehicle.speed+ "Км/ч и стоит " +vehicle.costOfKm+ " рубля за 1Км. пути");
 
         int cargoWeight = 60;
 
         City city = new City();
-        city.name = "'Место назначения'";
-        city.distanceKm = 1896;
+        city.setName("Городищище");
+        city.setDistanceKm(1576);
         city.printDistance();
-        System.out.println("Транспортировка груза весом " +cargoWeight+ "Кг. до пункта " +city.name+ " будет стоить " +(telega.costOfKm*(telega.capacity/100*cargoWeight/100)*city.distanceKm)+ " рублей");
+        System.out.println("Транспортировка груза весом " +cargoWeight+ "Кг. до пункта " +city.getName()+ " будет стоить " +(vehicle.costOfKm*(vehicle.capacity/100*cargoWeight/100)*city.getDistanceKm())+ " рублей");
 
 
     }
+
+
 }
