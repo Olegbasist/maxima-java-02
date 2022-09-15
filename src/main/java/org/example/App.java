@@ -37,17 +37,10 @@ public class App
         city.printDistance();
 
         System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " +(vehicle.costOfKm*city.getDistanceKm())+ " рублей");
-        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " +getPrice(city)+ " рублей");
+        //System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " + " рублей");
+        vehicle.printPrice();
 
 
-    }
-
-
-
-    public static float getPrice(City city){
-        Transport vehicle = new Transport();
-
-        return (vehicle.costOfKm*city.getDistanceKm());
 
 
     }

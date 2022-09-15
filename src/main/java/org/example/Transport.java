@@ -63,4 +63,19 @@ public class Transport
     public void setCostOfKm(float costOfKm) {
         this.costOfKm = costOfKm;
     }
+
+    float price;
+
+    public float getPrice(City city){
+        float price = (costOfKm*city.getDistanceKm());
+        return price;
+
+    }
+
+    public void printPrice(){
+        City city = new City();
+
+        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " + " рублей");
+    }
+
 }

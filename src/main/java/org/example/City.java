@@ -43,4 +43,7 @@ public class City
     public void setDistanceKm(int distanceKm) {
         this.distanceKm = distanceKm;
     }
+
+
+
 }
