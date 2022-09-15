@@ -47,9 +47,7 @@ public class App
     public static float getPrice(City city){
         Transport vehicle = new Transport();
 
-        float price = (vehicle.costOfKm*city.getDistanceKm());
-
-        return price;
+        return (vehicle.costOfKm*city.getDistanceKm());
 
 
     }
