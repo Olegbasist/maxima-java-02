@@ -16,7 +16,7 @@ package org.example;
 
 //TODO: 12.09.2022  Описать метод float getPrice(City city), возвращающий стоимость перевозки для нашего транспорта.
 
-//TODO: 12.09.2022  В обоих классах описать конструкторы с указанными свойствами в указанном порядке и геттеры-сеттеры всех свойств.
+// 12.09.2022  В обоих классах описать конструкторы с указанными свойствами в указанном порядке и геттеры-сеттеры всех свойств.
 
 
 public class App 
@@ -30,13 +30,26 @@ public class App
         vehicle.setCostOfKm(0.52F);
         System.out.println(vehicle.name+ " вмещает " +vehicle.capacity+ "Кг. груза, едет со скоростью " +vehicle.speed+ "Км/ч и стоит " +vehicle.costOfKm+ " рубля за 1Км. пути");
 
-        int cargoWeight = 60;
 
         City city = new City();
         city.setName("Городищище");
         city.setDistanceKm(1576);
         city.printDistance();
-        System.out.println("Транспортировка груза весом " +cargoWeight+ "Кг. до пункта " +city.getName()+ " будет стоить " +(vehicle.costOfKm*(vehicle.capacity/100*cargoWeight/100)*city.getDistanceKm())+ " рублей");
+
+        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " +(vehicle.costOfKm*city.getDistanceKm())+ " рублей");
+        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " +getPrice(city)+ " рублей");
+
+
+    }
+
+
+
+    public static float getPrice(City city){
+        Transport vehicle = new Transport();
+
+        float price = (vehicle.costOfKm*city.getDistanceKm());
+
+        return price;
 
 
     }

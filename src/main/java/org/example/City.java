@@ -1,18 +1,18 @@
 package org.example;
 
-// TODO: 12.09.2022  Описать класс City (город) со свойствами:
+// 12.09.2022  Описать класс City (город) со свойствами:
 //        name — имя, строка.
 //        distanceKm — расстояние, число
 
 public class City
 {
-    private String name;
+    private String name; //Название города
     public City(String name) {
         this.name = name;
     }
 
 
-   private int distanceKm;
+   private int distanceKm; // Расстояние до города
 
     public City(int distanceKm) {
         this.distanceKm = distanceKm;
