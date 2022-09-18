@@ -10,11 +10,20 @@ public class Transport
 {
     public Transport() {
     }
-    String name; //Название
+    private String name; //Название
+    private int capacity; //Вместимость
+    private int speed; //Скорость
+    private float costOfKm;//Стоимость километра
 
-    public Transport(String name) {
+    // Конструктор - один за всех
+    public Transport(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
+        this.capacity = capacity;
+        this.speed = speed;
+        this.costOfKm = costOfKm;
     }
+
+    // Геттеры-сеттеры
 
     public String getName() {
         return name;
@@ -22,13 +31,6 @@ public class Transport
 
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    int capacity; //Вместимость
-
-    public Transport(int capacity) {
-        this.capacity = capacity;
     }
 
     public int getCapacity() {
@@ -39,21 +41,12 @@ public class Transport
         this.capacity = capacity;
     }
 
-
-    int speed; //Скорость
-
     public int getSpeed() {
         return speed;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    float costOfKm;//Стоимость километра
-
-    public Transport(float costOfKm) {
-        this.costOfKm = costOfKm;
     }
 
     public float getCostOfKm() {
@@ -64,18 +57,25 @@ public class Transport
         this.costOfKm = costOfKm;
     }
 
-    float price;
+    // Вывод получившегося транспорта
+    public void printVehicleFeacher(){
+        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, едет со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
+    }
 
+
+    // Подсчёт стоимости перевозки
     public float getPrice(City city){
-        float price = (costOfKm*city.getDistanceKm());
-        return price;
+        return (costOfKm*city.getDistanceKm());
+
 
     }
 
-    public void printPrice(){
-        City city = new City();
 
-        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " + " рублей");
+    // Вывод получившейся стоимости
+    public void printPrice(float price){
+
+        System.out.println("Стоимость перевозки " +price+ " рублей");
     }
+
 
 }
