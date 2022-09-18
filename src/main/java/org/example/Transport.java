@@ -75,9 +75,9 @@ public class Transport
 
 
     // Вывод получившейся стоимости
-    public void printPrice(){
+    public void printPrice(float price){
 
-        System.out.println("Стоимость перевозки " +getPrice(new City())+ " рублей");
+        System.out.println("Стоимость перевозки " +price+ " рублей");
     }
 
 

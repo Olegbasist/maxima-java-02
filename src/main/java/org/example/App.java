@@ -41,7 +41,6 @@ public class App
         System.out.println("--------------------------------------------------");
         vehicle.printPrice(vehicle.getPrice(city));
         System.out.println(vehicle.getPrice(city));
-        vehicle.printPrice();
 
     }
 
