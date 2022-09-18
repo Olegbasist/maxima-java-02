@@ -26,21 +26,49 @@ public class App
     public static void main( String[] args )
     {
         Transport vehicle = new Transport();
-        vehicle.setName("Телега");
+        vehicle.setName("Некий транспорт");
         vehicle.setCapacity(242);
         vehicle.setSpeed(4);
         vehicle.setCostOfKm(0.52F);
         vehicle.printVehicleFeacher();
         System.out.println("--------------------------------------------------");
 
-
+        // Первый город
         City city = new City(false,true);
-        city.setName("Городищище");
+        city.setName("Городище");
         city.setDistanceKm(1576);
         city.printDistance();
-        System.out.println("--------------------------------------------------");
         vehicle.printPrice(vehicle.getPrice(city));
-        System.out.println(vehicle.getPrice(city));
+        //System.out.println(vehicle.getPrice(city));
+
+        //Второй город
+        System.out.println("--------------------------------------------------");
+        City city2 = new City(false,true);
+        city2.setName("Городок");
+        city2.setDistanceKm(165);
+        city2.printDistance();
+        vehicle.printPrice(vehicle.getPrice(city2));
+        //System.out.println(vehicle.getPrice(city2));
+
+        // Стоимость перевозки разным транспортом
+        System.out.println("--------------------------------------------------");
+        Truck truck = new Truck();
+        truck.setName("Грузовик");
+        truck.setCapacity(5000);
+        truck.setSpeed(70);
+        truck.setCostOfKm(3);
+        truck.printVehicleFeacher();
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
+        System.out.print(truck.getPrice(city));
+        System.out.println(" рублей");
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
+        System.out.print(truck.getPrice(city2));
+        System.out.println(" рублей");
+        //truck.printPrice(truck.getPrice(city));
+        //truck.printPrice(truck.getPrice(city2));
+
+        System.out.println("--------------------------------------------------");
+
 
     }
 
