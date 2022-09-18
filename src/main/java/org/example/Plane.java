@@ -26,6 +26,8 @@ public class Plane
         this.costOfKm = costOfKm;
     }
 
+
+
     // Геттеры-сеттеры
 
     public String getName() {
@@ -70,16 +72,13 @@ public class Plane
 
     // Подсчёт стоимости перевозки
     public float getPrice(City city){
-        return (costOfKm*city.getDistanceKm());
+        if (city.isHasAirport()) {
+            return (costOfKm * city.getDistanceKm());
+        }
+        else {
+            return 0;
+        }
 
-
-    }
-
-
-    // Вывод получившейся стоимости
-    public void printPrice(float price){
-
-        System.out.println("Стоимость перевозки " +price+ " рублей");
     }
 
 

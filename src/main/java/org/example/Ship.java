@@ -18,7 +18,6 @@ public class Ship
     private int speed; //Скорость
     private float costOfKm;//Стоимость километра
 
-    City city = new City();
 
     // Конструктор - один за всех
     public Ship(String name, int capacity, int speed, float costOfKm) {
@@ -66,7 +65,7 @@ public class Ship
     public void printVehicleFeacher(){
 
         System.out.println(name+ " вмещает " +capacity+ "Кг. груза, идёт со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
-        System.out.println("Город на воде: " +city.isOnWater());
+
     }
 
 
@@ -77,18 +76,6 @@ public class Ship
         }
         else {
             return 0;
-        }
-
-    }
-
-
-    // Вывод получившейся стоимости
-    public void printPrice(float price){
-        if (city.isOnWater() == true){
-        System.out.println("Стоимость перевозки " +price+ " рублей");
-    }
-        else {
-            System.out.println("Плавайте поездами аэрофлота! Город не доступен по воде.");
         }
 
     }

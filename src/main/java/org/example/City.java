@@ -37,13 +37,13 @@ public class City {
     // Вывод описания города
     public void printDistance() {
         System.out.println(name + " находится на расстоянии " + distanceKm + " Км.");
-        if (hasAirport=true){
+        if (hasAirport){
         System.out.print("В городе имется аэропорт");
         }
         else {
             System.out.print("В городе нет аэропорта");
         }
-        if (isOnWater=true){
+        if (isOnWater){
             System.out.println(", и есть река.");
 
         }

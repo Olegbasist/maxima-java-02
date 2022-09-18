@@ -26,11 +26,11 @@ public class App
     public static void main( String[] args )
     {
         Transport vehicle = new Transport();
-        vehicle.setName("Некий транспорт");
+        /*vehicle.setName("Некий транспорт");
         vehicle.setCapacity(242);
         vehicle.setSpeed(4);
         vehicle.setCostOfKm(0.52F);
-        vehicle.printVehicleFeacher();
+        vehicle.printVehicleFeacher();*/
         System.out.println("--------------------------------------------------");
 
         // Первый город
@@ -38,7 +38,7 @@ public class App
         city.setName("Городище");
         city.setDistanceKm(1576);
         city.printDistance();
-        vehicle.printPrice(vehicle.getPrice(city));
+        //vehicle.printPrice(vehicle.getPrice(city));
         //System.out.println(vehicle.getPrice(city));
 
         //Второй город
@@ -47,8 +47,8 @@ public class App
         city2.setName("Городок");
         city2.setDistanceKm(165);
         city2.printDistance();
-        vehicle.printPrice(vehicle.getPrice(city2));
-        //System.out.println(vehicle.getPrice(city2));
+        //vehicle.printPrice(vehicle.getPrice(city2));
+
 
         // Стоимость перевозки разным транспортом
         System.out.println("--------------------------------------------------");
@@ -64,8 +64,7 @@ public class App
         System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
         System.out.print(truck.getPrice(city2));
         System.out.println(" рублей");
-        //truck.printPrice(truck.getPrice(city));
-        //truck.printPrice(truck.getPrice(city2));
+
 
         System.out.println("--------------------------------------------------");
 
