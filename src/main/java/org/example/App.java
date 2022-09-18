@@ -28,17 +28,21 @@ public class App
         vehicle.setCapacity(242);
         vehicle.setSpeed(4);
         vehicle.setCostOfKm(0.52F);
-        System.out.println(vehicle.name+ " вмещает " +vehicle.capacity+ "Кг. груза, едет со скоростью " +vehicle.speed+ "Км/ч и стоит " +vehicle.costOfKm+ " рубля за 1Км. пути");
+        vehicle.printVehicleFeacher();
+        System.out.println("--------------------------------------------------");
 
 
         City city = new City();
         city.setName("Городищище");
         city.setDistanceKm(1576);
         city.printDistance();
+        System.out.println("----------------------------------------------------");
+        System.out.println(vehicle.getPrice(city));
+        vehicle.printPrice(vehicle.getPrice(city));
 
-        System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " +(vehicle.costOfKm*city.getDistanceKm())+ " рублей");
-        //System.out.println("Транспортировка 1Кг груза до пункта " +city.getName()+ " будет стоить " + " рублей");
-        vehicle.printPrice();
+
+
+        //System.out.println("Транспортировка 1Кг груза до пункта " + " будет стоить " + " рублей");
 
 
 

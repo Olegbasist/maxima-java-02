@@ -4,17 +4,13 @@ package org.example;
 //        name — имя, строка.
 //        distanceKm — расстояние, число
 
-public class City
-{
+public class City {
     private String name; //Название города
-    public City(String name) {
+
+    private int distanceKm; // Расстояние до города
+
+    public City(String name, int distanceKm) {
         this.name = name;
-    }
-
-
-   private int distanceKm; // Расстояние до города
-
-    public City(int distanceKm) {
         this.distanceKm = distanceKm;
     }
 
@@ -22,9 +18,11 @@ public class City
 
     }
 
-    public void printDistance()
-    {
-        System.out.println(name+ " находится на расстоянии " +distanceKm+ " Км.");
+
+    // Вывод описания города
+    public void printDistance() {
+        System.out.println(name + " находится на расстоянии " + distanceKm + " Км.");
+
 
     }
 
@@ -43,7 +41,4 @@ public class City
     public void setDistanceKm(int distanceKm) {
         this.distanceKm = distanceKm;
     }
-
-
-
 }
