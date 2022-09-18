@@ -37,7 +37,6 @@ public class App
         city.setDistanceKm(1576);
         city.printDistance();
         System.out.println("----------------------------------------------------");
-        System.out.println(vehicle.getPrice(city));
         vehicle.printPrice(vehicle.getPrice(city));
 
 
