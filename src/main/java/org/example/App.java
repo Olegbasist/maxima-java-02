@@ -43,7 +43,7 @@ public class App
 
         //Второй город
         System.out.println("--------------------------------------------------");
-        City city2 = new City(false,true);
+        City city2 = new City(true,false);
         city2.setName("Городок");
         city2.setDistanceKm(165);
         city2.printDistance();
@@ -66,6 +66,38 @@ public class App
         System.out.println(" рублей");
         //truck.printPrice(truck.getPrice(city));
         //truck.printPrice(truck.getPrice(city2));
+
+        System.out.println("--------------------------------------------------");
+
+        //Стоимость перевозки кораблём
+        Ship ship = new Ship();
+        ship.setName("Корабль");
+        ship. setCapacity(250000);
+        ship.setSpeed(25);
+        ship.setCostOfKm(1);
+        ship.printVehicleFeacher();
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
+        System.out.print(ship.getPrice(city));
+        System.out.println(" рублей");
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
+        System.out.print(ship.getPrice(city2));
+        System.out.println(" рублей");
+
+        System.out.println("--------------------------------------------------");
+
+        //Стоимость перевозки самолётом
+        Plane plane = new Plane();
+        plane.setName("Самолёт");
+        plane.setCapacity(800);
+        plane.setSpeed(900);
+        plane.setCostOfKm(57);
+        plane.printVehicleFeacher();
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
+        System.out.print(plane.getPrice(city));
+        System.out.println(" рублей");
+        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
+        System.out.print(plane.getPrice(city2));
+        System.out.println(" рублей");
 
         System.out.println("--------------------------------------------------");
 

@@ -62,14 +62,19 @@ public class Ship
 
     // Вывод получившегося транспорта
     public void printVehicleFeacher(){
-        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, едет со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
+
+        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, идёт со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
     }
 
 
     // Подсчёт стоимости перевозки
     public float getPrice(City city){
-        return (costOfKm*city.getDistanceKm());
-
+        if(city.isOnWater() == true) {
+            return (costOfKm * city.getDistanceKm());
+        }
+        else {
+            return 0;
+        }
 
     }
 

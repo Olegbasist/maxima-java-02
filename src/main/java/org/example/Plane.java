@@ -62,8 +62,10 @@ public class Plane
 
     // Вывод получившегося транспорта
     public void printVehicleFeacher(){
-        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, едет со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
+        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, летит со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
     }
+
+
 
 
     // Подсчёт стоимости перевозки

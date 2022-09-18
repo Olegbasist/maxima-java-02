@@ -37,9 +37,24 @@ public class City {
     // Вывод описания города
     public void printDistance() {
         System.out.println(name + " находится на расстоянии " + distanceKm + " Км.");
+        if (hasAirport=true){
+        System.out.print("В городе имется аэропорт");
+        }
+        else {
+            System.out.print("В городе нет аэропорта");
+        }
+        if (isOnWater=true){
+            System.out.println(", и есть река.");
+
+        }
+        else {
+            System.out.println(", и нет реки.");
+        }
+
+        }
 
 
-    }
+
 
     // Геттеры и сеттеры
 
