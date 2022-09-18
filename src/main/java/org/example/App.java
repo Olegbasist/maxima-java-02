@@ -18,6 +18,8 @@ package org.example;
 
 // 12.09.2022  В обоих классах описать конструкторы с указанными свойствами в указанном порядке и геттеры-сеттеры всех свойств.
 
+// TODO: 15.09.2022 Предусмотреть сокращенный синтаксис создания города, при котором будет считаться что река есть, а аэропорта нет.
+// 15.09.2022 Описать три класса Ship, Plane и Truck, со свойствами и методами, аналогичными транспорту.
 
 public class App 
 {
@@ -36,8 +38,10 @@ public class App
         city.setName("Городищище");
         city.setDistanceKm(1576);
         city.printDistance();
-        System.out.println("----------------------------------------------------");
+        System.out.println("--------------------------------------------------");
         vehicle.printPrice(vehicle.getPrice(city));
+        System.out.println(vehicle.getPrice(city));
+        vehicle.printPrice();
 
     }
 

@@ -9,18 +9,17 @@ package org.example;
 // TODO: 15.09.2022 Для корабля и самолета при невозможности перевозки в указанный город
 //                  метод float getPrice(City city) должен возвращать 0.
 
-public class Transport
+public class Plane
 {
-    public Transport() {
+    public Plane() {
     }
     private String name; //Название
     private int capacity; //Вместимость
     private int speed; //Скорость
     private float costOfKm;//Стоимость километра
 
-
     // Конструктор - один за всех
-    public Transport(String name, int capacity, int speed, float costOfKm) {
+    public Plane(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
         this.capacity = capacity;
         this.speed = speed;
@@ -71,13 +70,14 @@ public class Transport
     public float getPrice(City city){
         return (costOfKm*city.getDistanceKm());
 
+
     }
 
 
     // Вывод получившейся стоимости
-    public void printPrice(){
+    public void printPrice(float price){
 
-        System.out.println("Стоимость перевозки " +getPrice(new City())+ " рублей");
+        System.out.println("Стоимость перевозки " +price+ " рублей");
     }
 
 

@@ -4,14 +4,25 @@ package org.example;
 //        name — имя, строка.
 //        distanceKm — расстояние, число
 
+// 15.09.2022  Добавить классу City свойства:
+//          boolean hasAirport - Есть ли в городе аэропорт
+//          boolean isOnWater - стоит ли город на воде
+
 public class City {
-    private String name; //Название города
+    private String name; // Название города
 
     private int distanceKm; // Расстояние до города
 
-    public City(String name, int distanceKm) {
+    private boolean hasAirport; // Наличие аэропорта
+
+    private boolean isOnWater; // Наличие водного пути
+
+    // Конструктор
+    public City(String name, int distanceKm, boolean hasAirport, boolean isOnWater) {
         this.name = name;
         this.distanceKm = distanceKm;
+        this.hasAirport = hasAirport;
+        this.isOnWater = isOnWater;
     }
 
     public City() {
@@ -25,6 +36,8 @@ public class City {
 
 
     }
+
+    // Геттеры и сеттеры
 
     public String getName() {
         return name;
@@ -40,5 +53,21 @@ public class City {
 
     public void setDistanceKm(int distanceKm) {
         this.distanceKm = distanceKm;
+    }
+
+    public boolean isHasAirport() {
+        return hasAirport;
+    }
+
+    public void setHasAirport(boolean hasAirport) {
+        this.hasAirport = hasAirport;
+    }
+
+    public boolean isOnWater() {
+        return isOnWater;
+    }
+
+    public void setOnWater(boolean onWater) {
+        isOnWater = onWater;
     }
 }
