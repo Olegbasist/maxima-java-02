@@ -62,14 +62,14 @@ public class Transport
     }
 
     // Вывод получившегося транспорта
-    public void printVehicleFeacher(){
+    public void printVehicleFetcher(){
         System.out.println(name+ " вмещает " +capacity+ "Кг. груза, двигается со скоростью " +speed+ "Км/ч, а стоимость перевозки составляет " +costOfKm+ " рубля за 1Км. пути");
     }
 
 
     // Подсчёт стоимости перевозки
     public float getPrice(City city){
-        return (costOfKm*city.getDistanceKm());
+        return (getCostOfKm() * city.getDistanceKm());
 
     }
 

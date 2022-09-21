@@ -23,6 +23,10 @@ package org.example;
 //
 // Ship, Plane и Truck должны быть наследниками Transport.
 
+// 21.09.2022 В City должен быть два конструктора: с четырьмя и с двумя параметрами, для полного создания, либо для сокращенного. У Вас либо задаем имя и расстояние, либо параметры вода/аэропорт, это некорректно.
+// В транспорте в getPrice прямая ссылка на свойство, а не вызов геттера.
+// Todo: В Ship и Plane в getPrice можно использовать конструктор суперкласса - попробуйте, к этому не буду придираться
+
 public class App 
 {
     public static void main( String[] args )
@@ -30,19 +34,13 @@ public class App
 
         // Первый город
         System.out.println("--------------------------------------------------");
-        City city = new City(false,true);
-        city.setName("Городище");
-        city.setDistanceKm(1576);
+        City city = new City("Первый город", 5741);
         city.printDistance();
-
 
         //Второй город
         System.out.println("--------------------------------------------------");
-        City city2 = new City(true,false);
-        city2.setName("Городок");
-        city2.setDistanceKm(165);
+        City city2 = new City("Второй городок", 146,true, false);
         city2.printDistance();
-
 
         // Стоимость перевозки разным транспортом
         System.out.println("--------------------------------------------------");
@@ -51,7 +49,7 @@ public class App
         truck.setCapacity(5000);
         truck.setSpeed(70);
         truck.setCostOfKm(3);
-        truck.printVehicleFeacher();
+        truck.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(truck.getPrice(city));
         System.out.println(" рублей");
@@ -68,7 +66,7 @@ public class App
         ship. setCapacity(250000);
         ship.setSpeed(25);
         ship.setCostOfKm(1);
-        ship.printVehicleFeacher();
+        ship.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(ship.getPrice(city));
         System.out.println(" рублей");
@@ -84,7 +82,7 @@ public class App
         plane.setCapacity(800);
         plane.setSpeed(900);
         plane.setCostOfKm(57);
-        plane.printVehicleFeacher();
+        plane.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(plane.getPrice(city));
         System.out.println(" рублей");
