@@ -29,13 +29,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        Transport vehicle = new Transport();
-        /*vehicle.setName("Некий транспорт");
-        vehicle.setCapacity(242);
-        vehicle.setSpeed(4);
-        vehicle.setCostOfKm(0.52F);
-        vehicle.printVehicleFeacher();*/
-        System.out.println("--------------------------------------------------");
 
         // Первый город
         City city = new City(false,true);
