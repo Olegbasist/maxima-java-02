@@ -1,7 +1,7 @@
 package org.example;
 
 
-public class Transport
+ abstract class Transport
 {
 
     private String name; //Название
@@ -59,10 +59,12 @@ public class Transport
 
 
     // Подсчёт стоимости перевозки
-    public float getPrice(City city){
+    public abstract float getPrice(City city);
+
+   /* public float getPrice(City city){
         return (getCostOfKm() * city.getDistanceKm());
 
-    }
+    }*/
 
 
     // Вывод получившейся стоимости

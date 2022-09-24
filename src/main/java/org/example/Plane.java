@@ -11,11 +11,9 @@ public class Plane extends Transport
 
     // Переопределяем подсчёт стоимости перевозки
     public float getPrice(City city){
-        return !city.isHasAirport() ? 0 : super.getPrice(city);
+       return  !city.isHasAirport() ? 0 : (getCostOfKm() * city.getDistanceKm());
 
     }
-
-
 
 
 }
