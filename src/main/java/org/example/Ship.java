@@ -11,12 +11,7 @@ public class Ship extends Transport
 
     // Переопределяем подсчёт стоимости перевозки
     public float getPrice(City city){
-        if(city.isOnWater()) {
-            return (getCostOfKm() * city.getDistanceKm());
-        }
-        else {
-            return 0;
-        }
+        return !city.isOnWater() ? 0 : super.getPrice(city);
 
     }
 
