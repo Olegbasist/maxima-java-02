@@ -60,13 +60,7 @@ package org.example;
 
     // Подсчёт стоимости перевозки
     public abstract float getPrice(City city);
-
-   /* public float getPrice(City city){
-        return (getCostOfKm() * city.getDistanceKm());
-
-    }*/
-
-
+    
     // Вывод получившейся стоимости
     public void printPrice(float price){
 
