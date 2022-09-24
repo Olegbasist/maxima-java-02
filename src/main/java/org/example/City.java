@@ -1,12 +1,5 @@
 package org.example;
 
-// 12.09.2022  Описать класс City (город) со свойствами:
-//        name — имя, строка.
-//        distanceKm — расстояние, число
-
-// 15.09.2022  Добавить классу City свойства:
-//          boolean hasAirport - Есть ли в городе аэропорт
-//          boolean isOnWater - стоит ли город на воде
 
 public class City {
     private String name; // Название города
