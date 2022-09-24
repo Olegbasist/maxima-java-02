@@ -13,9 +13,9 @@ public class City {
 
     private int distanceKm; // Расстояние до города
 
-    private boolean hasAirport = false; // Наличие аэропорта
+    private boolean hasAirport; // Наличие аэропорта
 
-    private boolean isOnWater = true; // Наличие водного пути
+    private boolean isOnWater; // Наличие водного пути
 
     // Конструктор
 
@@ -30,9 +30,8 @@ public class City {
     public City(String name, int distanceKm) {
         this.name = name;
         this.distanceKm = distanceKm;
-    }
-
-    public City() {
+        this.hasAirport = false;
+        this.isOnWater = true;
 
     }
 

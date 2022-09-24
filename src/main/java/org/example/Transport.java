@@ -11,8 +11,7 @@ package org.example;
 
 public class Transport
 {
-    public Transport() {
-    }
+
     private String name; //Название
     private int capacity; //Вместимость
     private int speed; //Скорость
