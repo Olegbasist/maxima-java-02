@@ -21,7 +21,9 @@ package org.example;
 // 15.09.2022 Предусмотреть сокращенный синтаксис создания города, при котором будет считаться что река есть, а аэропорта нет.
 // 15.09.2022 Описать три класса Ship, Plane и Truck, со свойствами и методами, аналогичными транспорту.
 //
-// Ship, Plane и Truck должны быть наследниками Transport.
+// todo: В этой задаче был подвох - Ship, Plane и Truck должны быть наследниками Transport. :))
+// Сформулировано было некорректно, но никто в жизни не скажет от какого класса нужно наследоваться.
+// Увидеть родственные связи между классами и не писать одинаковый код трижды - вот навык получаемый Вами после этой задачи :))
 
 public class App 
 {
@@ -29,12 +31,12 @@ public class App
     {
 
         // Первый город
-        System.out.println("--------------------------------------------------");
         City city = new City(false,true);
         city.setName("Городище");
         city.setDistanceKm(1576);
         city.printDistance();
-
+        //vehicle.printPrice(vehicle.getPrice(city));
+        //System.out.println(vehicle.getPrice(city));
 
         //Второй город
         System.out.println("--------------------------------------------------");
@@ -42,6 +44,7 @@ public class App
         city2.setName("Городок");
         city2.setDistanceKm(165);
         city2.printDistance();
+        //vehicle.printPrice(vehicle.getPrice(city2));
 
 
         // Стоимость перевозки разным транспортом
