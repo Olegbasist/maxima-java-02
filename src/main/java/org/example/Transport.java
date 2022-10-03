@@ -1,7 +1,8 @@
 package org.example;
 
+//  22.09.2022  Запретить создание экземпляров класса Transport, метод getPrice сделать абстрактным.
 
-public class Transport
+public abstract class Transport
 {
 
     private String name; //Название
@@ -59,10 +60,7 @@ public class Transport
 
 
     // Подсчёт стоимости перевозки
-    public float getPrice(City city){
-        return (getCostOfKm() * city.getDistanceKm());
-
-    }
+    public abstract float getPrice(City city);
 
 
     // Вывод получившейся стоимости
