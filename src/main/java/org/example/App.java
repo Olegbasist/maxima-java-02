@@ -81,6 +81,28 @@ public class App
 
         System.out.println("--------------------------------------------------");
 
+        Transport [] vehicle = new Transport[5];
+            vehicle[0] = new Transport("Грузовик 1", 5000, 45, 2.3f) {
+                @Override
+                public float getPrice(City city) {
+                    return 0;
+                }
+
+            };
+            vehicle[1] = new Transport("Грузовик 2", 12000, 68, 1.7f) {
+                @Override
+                public float getPrice(City city) {
+                    return 0;
+                }
+            };
+            vehicle[2] = new Truck("Грузовичёк", 10000, 70, 1.4f);
+            vehicle[3] = new Ship("Доктор наук профессор Шварценгольд", 12000000, 25, 0.79f);
+            vehicle[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
+
+            for (Transport obj: vehicle){
+                System.out.println(obj.getName()+ " " +obj.getCapacity()+ " " +obj.getSpeed()+ " " +obj.getCostOfKm());
+            }
+
 
 
 
