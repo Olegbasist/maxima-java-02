@@ -37,14 +37,14 @@ public class App
         /*truck.setName("Грузовик");
         truck.setCapacity(5000);
         truck.setSpeed(70);
-        truck.setCostOfKm(3);*/
+        truck.setCostOfKm(3);
         truck.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(truck.getPrice(city));
         System.out.println(" рублей");
         System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
         System.out.print(truck.getPrice(city2));
-        System.out.println(" рублей");
+        System.out.println(" рублей");*/
 
 
         System.out.println("--------------------------------------------------");
@@ -54,7 +54,7 @@ public class App
         /*ship.setName("Корабль");
         ship. setCapacity(250000);
         ship.setSpeed(25);
-        ship.setCostOfKm(1);*/
+        ship.setCostOfKm(1);
         ship.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(ship.getPrice(city));
@@ -70,14 +70,14 @@ public class App
         /*plane.setName("Самолёт");
         plane.setCapacity(800);
         plane.setSpeed(900);
-        plane.setCostOfKm(57);*/
+        plane.setCostOfKm(57);
         plane.printVehicleFetcher();
         System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
         System.out.print(plane.getPrice(city));
         System.out.println(" рублей");
         System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
         System.out.print(plane.getPrice(city2));
-        System.out.println(" рублей");
+        System.out.println(" рублей");*/
 
         System.out.println("--------------------------------------------------");
 
@@ -101,7 +101,16 @@ public class App
 
             for (Transport obj: vehicle){
                 System.out.println(obj.getName()+ " " +obj.getCapacity()+ " " +obj.getSpeed()+ " " +obj.getCostOfKm());
+                System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
+                System.out.print(obj.getPrice(city));
+                System.out.println(" рублей");
+                System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
+                System.out.print(obj.getPrice(city2));
+                System.out.println(" рублей");
+                System.out.println("--------------------------------------------------");
             }
+
+
 
 
 
