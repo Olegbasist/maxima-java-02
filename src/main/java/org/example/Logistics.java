@@ -15,5 +15,26 @@ package org.example;
 
 public class Logistics {
 
+    public Logistics(Transport vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public Transport getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(Transport vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    Transport vehicles;
+
+    public Transport getShipping(City city, int weight, int hours){
+
+
+        return vehicles;
+    }
+
+
 
 }
