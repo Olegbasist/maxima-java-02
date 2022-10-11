@@ -30,6 +30,10 @@ public class Logistics {
     Transport vehicles;
 
     public Transport getShipping(City city, int weight, int hours){
+        float totalCost = vehicles.getCostOfKm()*city.getDistanceKm();
+
+
+
 
 
         return vehicles;

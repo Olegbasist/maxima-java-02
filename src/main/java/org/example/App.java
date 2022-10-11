@@ -14,10 +14,12 @@ package org.example;
 // TODO: 22.09.2022 Описать Интерфейс Repairable с методами void startRepair(), void finishRepair(), boolean isRepairing(). Все виды транспорта должны реализовывать этот интерфейс.
 //  В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+import java.util.Collection;
+import java.util.Collections;
+
+public class App {
+
+    public static void main( String[] args ) {
 
         // Первый город
         System.out.println("--------------------------------------------------");
@@ -31,53 +33,7 @@ public class App
         city2.printDistance();
         //System.out.println("Аэропорт: " +city2.isHasAirport()+ " Река: " +city2.isOnWater());
 
-        // Стоимость перевозки Грузовиком
-        System.out.println("--------------------------------------------------");
-        //Truck truck = new Truck("Грузовик", 5000, 75, 3);
-        /*truck.setName("Грузовик");
-        truck.setCapacity(5000);
-        truck.setSpeed(70);
-        truck.setCostOfKm(3);
-        truck.printVehicleFetcher();
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
-        System.out.print(truck.getPrice(city));
-        System.out.println(" рублей");
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
-        System.out.print(truck.getPrice(city2));
-        System.out.println(" рублей");*/
 
-
-        System.out.println("--------------------------------------------------");
-
-      //Стоимость перевозки кораблём
-        //Ship ship = new Ship ("Корабль", 250000, 25, 1);
-        /*ship.setName("Корабль");
-        ship. setCapacity(250000);
-        ship.setSpeed(25);
-        ship.setCostOfKm(1);
-        ship.printVehicleFetcher();
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
-        System.out.print(ship.getPrice(city));
-        System.out.println(" рублей");
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
-        System.out.print(ship.getPrice(city2));
-        System.out.println(" рублей");
-
-        System.out.println("--------------------------------------------------");
-
-        //Стоимость перевозки самолётом
-        Plane plane = new Plane("Самолёт", 800, 900, 57);
-        /*plane.setName("Самолёт");
-        plane.setCapacity(800);
-        plane.setSpeed(900);
-        plane.setCostOfKm(57);
-        plane.printVehicleFetcher();
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
-        System.out.print(plane.getPrice(city));
-        System.out.println(" рублей");
-        System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
-        System.out.print(plane.getPrice(city2));
-        System.out.println(" рублей");*/
 
         System.out.println("--------------------------------------------------");
 
@@ -100,21 +56,23 @@ public class App
             }
         System.out.println("--------------------------------------------------");
         System.out.println("--------------------------------------------------");
-        for (Transport obj: vehicle) {
+            for (Transport obj: vehicle){
+                System.out.print("Стоимость перевозки " +obj.getName()+ " = ");
+                System.out.println(obj.getCostOfKm()* city.getDistanceKm());
+            }
+
+
+
+
+        /*for (Transport obj: vehicle) {
+            System.out.println(obj.getShipping(city, 100, 50));
+
             for (int i=0; i< vehicle.length; i++) {
                 Logistics logistics = new Logistics(vehicle[i]);
                 //System.out.println(logistics.getShipping());
-                System.out.println(logistics.getShipping(city, 100, 50));
-            }
+                System.out.println(logistics.getShipping(city, 100, 50));*/
+
         }
-
-
-
-
-
-
-
-    }
 
 
 }
