@@ -32,9 +32,6 @@ package org.example;
 //      (он же грузовик, он же является инстансом транспорта)
 
 
-import java.util.*;
-import java.util.stream.Stream;
-
 public class App {
 
     public static void main( String[] args ) {
@@ -101,10 +98,49 @@ public class App {
         vehicle[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
 
 
-        ArrayList<Object> objectsArrayList = new ArrayList<>();
-        float minCostOfDelivery = Float.MAX_VALUE;
+        //ArrayList<Object> objectsArrayList = new ArrayList<>();
+/*        float minCostOfDelivery = Float.MAX_VALUE;
         Transport cheapestVehicle = null;
         for (Transport obj: vehicle){
+            //Collections.addAll(objectsArrayList, obj.getPrice(city2));
+            float costOfDelivery = obj.getPrice(city2);
+            System.out.println(obj);
+            System.out.print(obj.getName());
+            System.out.print(" доставит груз за - ");
+            System.out.println(costOfDelivery);
+
+            if (minCostOfDelivery > costOfDelivery && costOfDelivery !=0) {
+                minCostOfDelivery = costOfDelivery;
+                cheapestVehicle = obj;
+            }
+            System.out.println("Текущая минимальная стоимость: " +minCostOfDelivery);
+            System.out.println("Текущий самый дешевый транспорт :" +cheapestVehicle);
+            System.out.println("");
+
+        }*/
+
+// Посылаем объекты в Logistics заполняя ими vehicles
+
+        LogisticsWithoutList logisticsWithoutList = new LogisticsWithoutList(vehicle[vehicle.length-1]);
+        logisticsWithoutList.setVehicles(vehicle[0]);
+        logisticsWithoutList.setVehicles(vehicle[1]);
+        logisticsWithoutList.setVehicles(vehicle[2]);
+        logisticsWithoutList.setVehicles(vehicle[3]);
+        logisticsWithoutList.setVehicles(vehicle[4]);
+        //logisticsWithoutList.setVehicles(new Truck("Грузищще", 5864, 120, 1.1f));
+        //System.out.println("Вот какие транспорты получились:");
+        //logisticsWithoutList.listOfVehicles();
+        System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
+        System.out.println(logisticsWithoutList.getShipping(city2,50,24).getName());
+
+// Добавляем все вихикл в ЭррейЛист и затем ищем минимум
+
+        /*ArrayList<Transport> arrOfTransports = new ArrayList<>();
+        //arrOfTransports.add(vehicle[0]);
+        //arrOfTransports.add(vehicle[1]);
+        Collections.addAll(arrOfTransports, vehicle);
+        arrOfTransports.forEach(elem -> System.out.println(elem));
+        for (Transport obj: arrOfTransports){
             //Collections.addAll(objectsArrayList, obj.getPrice(city2));
             float costOfDelivery = obj.getPrice(city2);
             //System.out.println(obj);
@@ -118,18 +154,10 @@ public class App {
             };
             System.out.println("Текущая минимальная стоимость: " +minCostOfDelivery);
             System.out.println("Текущий самый дешевый транспорт :" +cheapestVehicle);
-            System.out.println("");
+            System.out.println("");*/
 
         }
 
-        //System.out.print("Всего транспортных средств: ");
-        //System.out.println(objectsArrayList.size());
-
-
-        //Collections.addAll(objectsArrayList, vehicle);
-        //System.out.println(Arrays.stream(vehicle).findAny());
-        //objectsArrayList.forEach(o ->  System.out.println(o));
-        //Object max = Collections.max(objectsArrayList);
 
 
 
@@ -137,5 +165,5 @@ public class App {
 
 
 
-    }
+
 }
