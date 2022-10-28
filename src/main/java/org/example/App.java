@@ -32,14 +32,14 @@ package org.example;
 //      (он же грузовик, он же является инстансом транспорта)
 
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class App {
 
     public static void main( String[] args ) {
 
-        // Первый город
+       // Первый город
         System.out.println("--------------------------------------------------");
         City city = new City("Небольшой городок на реке", 5741);
         city.printDistance();
@@ -55,7 +55,7 @@ public class App {
 
         System.out.println("--------------------------------------------------");
 
-        Transport [] vehicle = new Transport[5];
+        /*Transport [] vehicle = new Transport[5];
             vehicle[0] = new Truck("Грузовик", 5000, 85, 2.3f);
             vehicle[1] = new Truck("Тягач с полуприцепом", 12000, 68, 1.7f);
             vehicle[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
@@ -77,7 +77,7 @@ public class App {
             for (Transport obj: vehicle){
                 System.out.print("Стоимость перевозки " +obj.getName()+ " = ");
                 System.out.println(obj.getCostOfKm()* city.getDistanceKm());
-            }
+            }*/
 
 
 
@@ -90,7 +90,52 @@ public class App {
                 //System.out.println(logistics.getShipping());
                 System.out.println(logistics.getShipping(city, 100, 50));*/
 
+// Решаем задачу последовательно
+// Создаем массив транспортов
+
+        Transport [] vehicle = new Transport[5];
+        vehicle[0] = new Truck("Грузовик", 5000, 85, 2.3f);
+        vehicle[1] = new Truck("Тягач с полуприцепом", 12000, 68, 1.7f);
+        vehicle[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
+        vehicle[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 12000000, 25, 0.79f);
+        vehicle[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
+
+
+        ArrayList<Object> objectsArrayList = new ArrayList<>();
+        float minCostOfDelivery = Float.MAX_VALUE;
+        Transport cheapestVehicle = null;
+        for (Transport obj: vehicle){
+            //Collections.addAll(objectsArrayList, obj.getPrice(city2));
+            float costOfDelivery = obj.getPrice(city2);
+            //System.out.println(obj);
+            System.out.print(obj.getName());
+            System.out.print(" доставит груз за - ");
+            System.out.println(costOfDelivery);
+
+            if (minCostOfDelivery > costOfDelivery && costOfDelivery !=0) {
+                minCostOfDelivery = costOfDelivery;
+                cheapestVehicle = obj;
+            };
+            System.out.println("Текущая минимальная стоимость: " +minCostOfDelivery);
+            System.out.println("Текущий самый дешевый транспорт :" +cheapestVehicle);
+            System.out.println("");
+
         }
 
+        //System.out.print("Всего транспортных средств: ");
+        //System.out.println(objectsArrayList.size());
 
+
+        //Collections.addAll(objectsArrayList, vehicle);
+        //System.out.println(Arrays.stream(vehicle).findAny());
+        //objectsArrayList.forEach(o ->  System.out.println(o));
+        //Object max = Collections.max(objectsArrayList);
+
+
+
+
+
+
+
+    }
 }
