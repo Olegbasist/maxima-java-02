@@ -1,5 +1,5 @@
 package org.example;
-
+//
 
 public class City {
     private String name; // Название города
