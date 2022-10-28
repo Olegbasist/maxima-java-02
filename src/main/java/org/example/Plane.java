@@ -1,5 +1,5 @@
 package org.example;
-
+//
 
 public class Plane extends Transport{
 

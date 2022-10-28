@@ -11,14 +11,14 @@ package org.example;
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
 // TODO: 22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
-
+//
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Logistics {
+public class LogisticsWithoutList {
 
-    public Logistics(Transport vehicles) {
+    public LogisticsWithoutList(Transport vehicles) {
         this.vehicles = vehicles;
     }
 
@@ -52,6 +52,14 @@ public class Logistics {
 
 
         return cheapestVehicle;
+    }
+
+
+
+    public void listOfVehicles (){
+
+        //Collections.addAll(arr, vehicles);
+        arrOfVehicles.forEach(elem -> System.out.println(elem));
     }
 
 

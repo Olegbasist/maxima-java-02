@@ -1,18 +1,10 @@
 package org.example;
 
-//12.09.2022  Описать класс Transport (транспортное средство) со свойствами:
-//        name — имя, строка.
-//        capacity — грузоподъемность, число.
-//        speed — скорость, число.
-//        costOfKm — стоимость за километр, дробное число
-
-// TODO: 15.09.2022 Для корабля и самолета при невозможности перевозки в указанный город
-//                  метод float getPrice(City city) должен возвращать 0.
-
-public class Transport
+//  22.09.2022  Запретить создание экземпляров класса Transport, метод getPrice сделать абстрактным.
+//
+public abstract class Transport
 {
-    public Transport() {
-    }
+
     private String name; //Название
     private int capacity; //Вместимость
     private int speed; //Скорость
@@ -62,16 +54,13 @@ public class Transport
     }
 
     // Вывод получившегося транспорта
-    public void printVehicleFeacher(){
-        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, едет со скоростью " +speed+ "Км/ч и стоит " +costOfKm+ " рубля за 1Км. пути");
+    public void printVehicleFetcher(){
+        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, двигается со скоростью " +speed+ "Км/ч, а стоимость перевозки составляет " +costOfKm+ " рубля за 1Км. пути");
     }
 
 
     // Подсчёт стоимости перевозки
-    public float getPrice(City city){
-        return (costOfKm*city.getDistanceKm());
-
-    }
+    public abstract float getPrice(City city);
 
 
     // Вывод получившейся стоимости
