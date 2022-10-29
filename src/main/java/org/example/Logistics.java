@@ -1,11 +1,11 @@
 package org.example;
 
-// TODO: 22.09.2022 Описать класс Logistics - бизнес логику нашей логистики,
+//  22.09.2022 Описать класс Logistics - бизнес логику нашей логистики,
 //  при создании которого мы будем передавать ему некоторое количество объектов класса Transport ,
 //  заполняя свойство vehicles.
 //
 //
-// TODO: 22.09.2022 Описать методы Transport getShipping(City city, int weight, int hours) - найти самое оптимальное по стоимости доставки транспортное средство.
+//  22.09.2022 Описать методы Transport getShipping(City city, int weight, int hours) - найти самое оптимальное по стоимости доставки транспортное средство.
 //
 // TODO: 22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
@@ -18,16 +18,16 @@ import java.util.Collections;
 
 public class Logistics {
 
+    Transport[] vehicles;
+    boolean shippingIsAvailable;
+
     public Logistics(Transport ... vehicles) {
         this.vehicles=vehicles;
     }
 
-
     public Transport[] getVehicles() {
         return vehicles;
     }
-
-    Transport[] vehicles;
 
     public Transport getShipping(City city, int weight, int hours){
         float costOfDelivery;
@@ -36,7 +36,8 @@ public class Logistics {
 
         for (Transport obj: vehicles){
             costOfDelivery = obj.getPrice(city);
-            if (minCostOfDelivery > costOfDelivery && costOfDelivery != 0){
+            shippingIsAvailable = isShippingAvailable(city,weight,hours,obj);
+            if (shippingIsAvailable && minCostOfDelivery > costOfDelivery){
                 minCostOfDelivery = costOfDelivery;
                 cheapestVehicle = obj;
             }
@@ -47,13 +48,12 @@ public class Logistics {
         return cheapestVehicle;
     }
 
-
-
-    public void listOfVehicles (){
-        ArrayList<Transport> arr = new ArrayList<>();
-
-        Collections.addAll(arr, vehicles);
-        arr.forEach(element -> System.out.println(element.getName()));
+    public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
+        shippingIsAvailable = true;
+        if (obj.getPrice(city) == 0){
+            shippingIsAvailable = false;
+        }
+        return shippingIsAvailable;
     }
 
 
