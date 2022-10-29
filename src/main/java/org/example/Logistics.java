@@ -11,37 +11,30 @@ package org.example;
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
 // TODO: 22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
-
+//
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Logistics {
 
-    public Logistics(Transport vehicles) {
-        this.vehicles = vehicles;
+    public Logistics(Transport ... vehicles) {
+        this.vehicles=vehicles;
     }
 
-    public Transport getVehicles() {
+
+    public Transport[] getVehicles() {
         return vehicles;
     }
-    ArrayList<Transport> arrOfVehicles = new ArrayList<>();
 
-    public void setVehicles(Transport vehicles) {
-        this.vehicles = vehicles;
-        Collections.addAll(arrOfVehicles, vehicles);
-    }
-
-
-
-    Transport vehicles;
+    Transport[] vehicles;
 
     public Transport getShipping(City city, int weight, int hours){
         float costOfDelivery;
         float minCostOfDelivery = Float.MAX_VALUE;
         Transport cheapestVehicle = null;
 
-        for (Transport obj: arrOfVehicles){
+        for (Transport obj: vehicles){
             costOfDelivery = obj.getPrice(city);
             if (minCostOfDelivery > costOfDelivery && costOfDelivery != 0){
                 minCostOfDelivery = costOfDelivery;
@@ -52,6 +45,15 @@ public class Logistics {
 
 
         return cheapestVehicle;
+    }
+
+
+
+    public void listOfVehicles (){
+        ArrayList<Transport> arr = new ArrayList<>();
+
+        Collections.addAll(arr, vehicles);
+        arr.forEach(element -> System.out.println(element.getName()));
     }
 
 
