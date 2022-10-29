@@ -8,7 +8,7 @@ package org.example;
 //  22.09.2022 Описать методы Transport getShipping(City city, int weight, int hours)
 //  - найти самое оптимальное по стоимости доставки транспортное средство.
 //
-// TODO: 22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
+//  22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
 // TODO: 22.09.2022 Описать Интерфейс Repairable с методами void startRepair(), void finishRepair(), boolean isRepairing(). Все виды транспорта должны реализовывать этот интерфейс.
@@ -135,7 +135,7 @@ public class App {
 //        System.out.println("Вот какие транспорты получились:");
 //        logistics.listOfVehicles();
         System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
-        System.out.println(logistics.getShipping(city2,5000,24).getName());
+        System.out.println(logistics.getShipping(city2,1000,24).getName());
 
 // Добавляем все вихикл в ЭррейЛист и затем ищем минимум
 
