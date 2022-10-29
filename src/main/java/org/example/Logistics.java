@@ -29,28 +29,29 @@ public class Logistics {
         return vehicles;
     }
 
-    public Transport getShipping(City city, int weight, int hours){
+    public Transport getShipping(City city, int weight, int hours) throws NullPointerException{
         float costOfDelivery;
         float minCostOfDelivery = Float.MAX_VALUE;
         Transport cheapestVehicle = null;
 
-        for (Transport obj: vehicles){
-            costOfDelivery = obj.getPrice(city);
-            shippingIsAvailable = isShippingAvailable(city,weight,hours,obj);
-            if (shippingIsAvailable && minCostOfDelivery > costOfDelivery){
-                minCostOfDelivery = costOfDelivery;
-                cheapestVehicle = obj;
+
+            for (Transport obj : vehicles) {
+                costOfDelivery = obj.getPrice(city);
+                shippingIsAvailable = isShippingAvailable(city, weight, hours, obj);
+                if (shippingIsAvailable && minCostOfDelivery > costOfDelivery) {
+                    minCostOfDelivery = costOfDelivery;
+                    cheapestVehicle = obj;
+                }
             }
-        }
-
-
 
         return cheapestVehicle;
     }
 
     public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
         shippingIsAvailable = true;
-        if (obj.getPrice(city) == 0){
+        if (obj.getPrice(city) == 0
+                | city.getDistanceKm()/ obj.getSpeed() > hours
+                | obj.getCapacity() < weight){
             shippingIsAvailable = false;
         }
         return shippingIsAvailable;

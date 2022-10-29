@@ -34,7 +34,7 @@ package org.example;
 
 public class App {
 
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws Exception {
 
        // Первый город
         System.out.println("--------------------------------------------------");
@@ -135,7 +135,7 @@ public class App {
 //        System.out.println("Вот какие транспорты получились:");
 //        logistics.listOfVehicles();
         System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
-        System.out.println(logistics.getShipping(city2,50,24).getName());
+        System.out.println(logistics.getShipping(city2,5000,24).getName());
 
 // Добавляем все вихикл в ЭррейЛист и затем ищем минимум
 

@@ -7,6 +7,8 @@ public class Truck extends Transport{
         super(name, capacity, speed, costOfKm);
     }
 
+
+
     @Override
     public float getPrice(City city) {
         return  (getCostOfKm() * city.getDistanceKm());
