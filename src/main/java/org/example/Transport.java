@@ -2,7 +2,7 @@ package org.example;
 
 //  22.09.2022  Запретить создание экземпляров класса Transport, метод getPrice сделать абстрактным.
 //
-public abstract class Transport
+public abstract class Transport implements Repairable
 {
 
     private String name; //Название

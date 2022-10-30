@@ -90,12 +90,18 @@ public class App {
 // Решаем задачу последовательно
 // Создаем массив транспортов
 
-        Transport [] vehicles = new Transport[5];
+        Transport [] vehicles = new Transport[6];
         vehicles[0] = new Truck("Грузовик", 5000, 85, 2.3f);
         vehicles[1] = new Truck("Тягач с полуприцепом", 12000, 68, 1.7f);
         vehicles[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
-        vehicles[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 12000000, 25, 0.79f);
+        vehicles[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 1200000, 25, 0.79f);
         vehicles[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
+        vehicles[5] = new TruckNew("Сломанный грузовик", 30000, 1070, 0.1f);
+
+// Пробуем поставить на ремонт
+        //vehicles[5].startRepair();
+        //vehicles[5].finishRepair();
+        System.out.println("Сломанный грузовик сломан: " +vehicles[5].isRepairing());
 
 
         //ArrayList<Object> objectsArrayList = new ArrayList<>();
@@ -135,7 +141,7 @@ public class App {
 //        System.out.println("Вот какие транспорты получились:");
 //        logistics.listOfVehicles();
         System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
-        System.out.println(logistics.getShipping(city2,1000,24).getName());
+        System.out.println(logistics.getShipping(city2,100,24).getName());
 
 // Добавляем все вихикл в ЭррейЛист и затем ищем минимум
 

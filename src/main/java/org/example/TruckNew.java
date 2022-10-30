@@ -1,13 +1,14 @@
 package org.example;
 //
 
-public class Truck extends Transport{
+public class TruckNew extends Transport{
 
-    public Truck(String name, int capacity, int speed, float costOfKm) {
+    public TruckNew(String name, int capacity, int speed, float costOfKm) {
         super(name, capacity, speed, costOfKm);
     }
 
 
+    private boolean repairing;
 
     @Override
     public float getPrice(City city) {
@@ -16,16 +17,17 @@ public class Truck extends Transport{
 
     @Override
     public void startRepair() {
+        this.repairing = true;
 
     }
 
     @Override
     public void finishRepair() {
-
+        this.repairing = false;
     }
 
     @Override
     public boolean isRepairing() {
-        return false;
+        return repairing;
     }
 }
