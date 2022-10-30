@@ -14,18 +14,4 @@ public class Truck extends Transport{
         return  (getCostOfKm() * city.getDistanceKm());
     }
 
-    @Override
-    public void startRepair() {
-
-    }
-
-    @Override
-    public void finishRepair() {
-
-    }
-
-    @Override
-    public boolean isRepairing() {
-        return false;
-    }
 }

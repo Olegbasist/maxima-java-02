@@ -16,10 +16,7 @@ public class TruckNew extends Transport{
     }
 
     @Override
-    public void startRepair() {
-        this.repairing = true;
-
-    }
+    public void startRepair() { this.repairing = true; }
 
     @Override
     public void finishRepair() {

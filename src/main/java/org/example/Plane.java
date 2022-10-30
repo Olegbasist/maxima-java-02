@@ -25,19 +25,4 @@ public class Plane extends Transport
 
     }
 
-
-    @Override
-    public void startRepair() {
-
-    }
-
-    @Override
-    public void finishRepair() {
-
-    }
-
-    @Override
-    public boolean isRepairing() {
-        return false;
-    }
 }

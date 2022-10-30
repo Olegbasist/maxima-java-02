@@ -10,7 +10,7 @@ package org.example;
 //  22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
-// TODO: 22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
+//  22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
 //
 
 
@@ -49,7 +49,7 @@ public class Logistics {
     }
 
     public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
-        shippingIsAvailable = (obj.getPrice(city) != 0)
+        shippingIsAvailable = obj.getPrice(city) != 0
                 && city.getDistanceKm() / obj.getSpeed() < hours
                 && obj.getCapacity() > weight
                 && !(obj.isRepairing());

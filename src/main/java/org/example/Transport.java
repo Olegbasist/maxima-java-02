@@ -9,6 +9,7 @@ public abstract class Transport implements Repairable
     private int capacity; //Вместимость
     private int speed; //Скорость
     private float costOfKm;//Стоимость километра
+    private boolean isRepairing;//Состояние на ремонте
 
     /*private boolean needAirport;//Требуется аэропорт
     private boolean needWater;//Требуется вода
@@ -78,6 +79,19 @@ public abstract class Transport implements Repairable
     public void printPrice(float price){
 
         System.out.println("Стоимость перевозки " +price+ " рублей");
+    }
+
+    @Override
+    public void startRepair() { this.isRepairing = true; }
+
+    @Override
+    public void finishRepair() {
+        this.isRepairing = false;
+    }
+
+    @Override
+    public boolean isRepairing() {
+        return isRepairing;
     }
 
 

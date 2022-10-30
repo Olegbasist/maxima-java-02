@@ -11,7 +11,7 @@ package org.example;
 //  22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
-// TODO: 22.09.2022 Описать Интерфейс Repairable с методами void startRepair(), void finishRepair(), boolean isRepairing(). Все виды транспорта должны реализовывать этот интерфейс.
+//  22.09.2022 Описать Интерфейс Repairable с методами void startRepair(), void finishRepair(), boolean isRepairing(). Все виды транспорта должны реализовывать этот интерфейс.
 //  В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
 
 // TODO: 25.10.2022 Задание из коментария в начале следующего урока:
@@ -96,12 +96,12 @@ public class App {
         vehicles[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
         vehicles[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 1200000, 25, 0.79f);
         vehicles[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
-        vehicles[5] = new TruckNew("Сломанный грузовик", 30000, 1070, 0.1f);
+        vehicles[5] = new Plane("Маленький самолёт", 1200, 750, 5.5f);
 
 // Пробуем поставить на ремонт
         vehicles[5].startRepair();
-        //vehicles[5].finishRepair();
-        System.out.println("Сломанный грузовик сломан: " +vehicles[5].isRepairing());
+        vehicles[5].finishRepair();
+        System.out.println("Сломанный транспорт сломан: " +vehicles[5].isRepairing());
 
 
         //ArrayList<Object> objectsArrayList = new ArrayList<>();
@@ -141,7 +141,7 @@ public class App {
 //        System.out.println("Вот какие транспорты получились:");
 //        logistics.listOfVehicles();
         System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
-        System.out.println(logistics.getShipping(city2,100,24).getName());
+        System.out.println(logistics.getShipping(city2,8000,24).getName());
 
 // Добавляем все вихикл в ЭррейЛист и затем ищем минимум
 
