@@ -37,13 +37,12 @@ public class Logistics {
                 if (shippingIsAvailable && minCostOfDelivery > costOfDelivery) {
                     minCostOfDelivery = costOfDelivery;
                     cheapestVehicle = obj;
-
                 }
             }
-//Перехватываем ошибку NullPointerException
+    //Перехватываем ошибку NullPointerException
         if (cheapestVehicle == null){
             System.out.println("Ни один транспорт не подходит для доставки вашего груза");
-            System.exit(0);
+            System.exit(1);
             //Где-то здесь потом будет вызов фабрики
         }
         return cheapestVehicle;

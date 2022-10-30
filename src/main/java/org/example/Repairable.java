@@ -7,7 +7,7 @@ package org.example;
 
 public interface Repairable {
 
-    public abstract void startRepair();
-    public abstract void finishRepair();
-    public abstract boolean isRepairing();
+    void startRepair();
+    void finishRepair();
+    boolean isRepairing();
 }
