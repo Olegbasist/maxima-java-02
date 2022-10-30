@@ -99,7 +99,7 @@ public class App {
         vehicles[5] = new TruckNew("Сломанный грузовик", 30000, 1070, 0.1f);
 
 // Пробуем поставить на ремонт
-        //vehicles[5].startRepair();
+        vehicles[5].startRepair();
         //vehicles[5].finishRepair();
         System.out.println("Сломанный грузовик сломан: " +vehicles[5].isRepairing());
 

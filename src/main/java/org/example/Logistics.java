@@ -49,9 +49,9 @@ public class Logistics {
     }
 
     public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
-        shippingIsAvailable = !(obj.getPrice(city) == 0)
-                && city.getDistanceKm() / obj.getSpeed() > hours
-                && obj.getCapacity() < weight
+        shippingIsAvailable = (obj.getPrice(city) != 0)
+                && city.getDistanceKm() / obj.getSpeed() < hours
+                && obj.getCapacity() > weight
                 && !(obj.isRepairing());
 
         if (obj.isRepairing()){
