@@ -11,16 +11,6 @@ public abstract class Transport implements Repairable
     private float costOfKm;//Стоимость километра
     private boolean isRepairing;//Состояние на ремонте
 
-    /*private boolean needAirport;//Требуется аэропорт
-    private boolean needWater;//Требуется вода
-
-    public boolean isNeedAirport() {
-        return needAirport;
-    }
-
-    public boolean isNeedWater() {
-        return needWater;
-    }*/
 
 
     // Конструктор - один за всех
@@ -75,12 +65,8 @@ public abstract class Transport implements Repairable
     public abstract float getPrice(City city);
 
 
-    // Вывод получившейся стоимости
-    public void printPrice(float price){
 
-        System.out.println("Стоимость перевозки " +price+ " рублей");
-    }
-
+    //Постановка и снятие с ремонта
     @Override
     public void startRepair() { this.isRepairing = true; }
 

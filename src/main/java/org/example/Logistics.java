@@ -13,8 +13,6 @@ package org.example;
 //  22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
 //
 
-
-
 public class Logistics {
 
     Transport[] vehicles;
@@ -43,7 +41,7 @@ public class Logistics {
         if (cheapestVehicle == null){
             System.out.println("Ни один транспорт не подходит для доставки вашего груза");
             System.exit(1);
-    //Где-то здесь потом будет вызов фабрики
+    //Где-то здесь потом будет вызов фабрики ... наверное
         }
         return cheapestVehicle;
     }
@@ -54,9 +52,6 @@ public class Logistics {
                 && obj.getCapacity() > weight
                 && !(obj.isRepairing());
 
-        if (obj.isRepairing()){
-            System.out.println("Самый дешевый транспорт в логистике - на ремонте!");
-        }
         return shippingIsAvailable;
     }
 
