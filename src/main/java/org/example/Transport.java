@@ -55,11 +55,6 @@ public abstract class Transport implements Repairable
         this.costOfKm = costOfKm;
     }
 
-    // Вывод получившегося транспорта
-    public void printVehicleFetcher(){
-        System.out.println(name+ " вмещает " +capacity+ "Кг. груза, двигается со скоростью " +speed+ "Км/ч, а стоимость перевозки составляет " +costOfKm+ " рубля за 1Км. пути");
-    }
-
 
     // Подсчёт стоимости перевозки
     public abstract float getPrice(City city);
