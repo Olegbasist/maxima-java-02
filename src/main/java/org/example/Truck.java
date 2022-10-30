@@ -13,4 +13,5 @@ public class Truck extends Transport{
     public float getPrice(City city) {
         return  (getCostOfKm() * city.getDistanceKm());
     }
+
 }

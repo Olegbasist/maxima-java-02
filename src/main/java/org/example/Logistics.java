@@ -10,7 +10,7 @@ package org.example;
 //  22.09.2022 Необходимо учесть грузоподъемность и необходимость доставки в указанный срок,
 //  для определения возможности перевозки определенным транспортом описать метод isShippingAvailable()
 //
-// TODO: 22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
+//  22.09.2022 В классе Logistics учесть состояние транспортного средства при расчете грузоперевозок.
 //
 
 
@@ -43,15 +43,20 @@ public class Logistics {
         if (cheapestVehicle == null){
             System.out.println("Ни один транспорт не подходит для доставки вашего груза");
             System.exit(1);
-            //Где-то здесь потом будет вызов фабрики
+    //Где-то здесь потом будет вызов фабрики
         }
         return cheapestVehicle;
     }
 
     public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
-        shippingIsAvailable = !(obj.getPrice(city) == 0
-                | city.getDistanceKm() / obj.getSpeed() > hours
-                | obj.getCapacity() < weight);
+        shippingIsAvailable = obj.getPrice(city) != 0
+                && city.getDistanceKm() / obj.getSpeed() < hours
+                && obj.getCapacity() > weight
+                && !(obj.isRepairing());
+
+        if (obj.isRepairing()){
+            System.out.println("Самый дешевый транспорт в логистике - на ремонте!");
+        }
         return shippingIsAvailable;
     }
 

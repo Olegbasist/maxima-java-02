@@ -2,13 +2,14 @@ package org.example;
 
 //  22.09.2022  Запретить создание экземпляров класса Transport, метод getPrice сделать абстрактным.
 //
-public abstract class Transport
+public abstract class Transport implements Repairable
 {
 
     private String name; //Название
     private int capacity; //Вместимость
     private int speed; //Скорость
     private float costOfKm;//Стоимость километра
+    private boolean isRepairing;//Состояние на ремонте
 
     /*private boolean needAirport;//Требуется аэропорт
     private boolean needWater;//Требуется вода
@@ -78,6 +79,19 @@ public abstract class Transport
     public void printPrice(float price){
 
         System.out.println("Стоимость перевозки " +price+ " рублей");
+    }
+
+    @Override
+    public void startRepair() { this.isRepairing = true; }
+
+    @Override
+    public void finishRepair() {
+        this.isRepairing = false;
+    }
+
+    @Override
+    public boolean isRepairing() {
+        return isRepairing;
     }
 
 

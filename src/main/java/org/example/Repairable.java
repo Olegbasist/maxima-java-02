@@ -1,6 +1,6 @@
 package org.example;
 
-// TODO: 22.09.2022 Описать Интерфейс Repairable
+//  22.09.2022 Описать Интерфейс Repairable
 //  с методами void startRepair(), void finishRepair(), boolean isRepairing().
 //  Все виды транспорта должны реализовывать этот интерфейс.
 
