@@ -10,6 +10,17 @@ public abstract class Transport
     private int speed; //Скорость
     private float costOfKm;//Стоимость километра
 
+    /*private boolean needAirport;//Требуется аэропорт
+    private boolean needWater;//Требуется вода
+
+    public boolean isNeedAirport() {
+        return needAirport;
+    }
+
+    public boolean isNeedWater() {
+        return needWater;
+    }*/
+
 
     // Конструктор - один за всех
     public Transport(String name, int capacity, int speed, float costOfKm) {
