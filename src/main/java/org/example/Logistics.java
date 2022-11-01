@@ -44,7 +44,7 @@ public class Logistics {
         return cheapestVehicle;
     }
 
-    public boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
+    private boolean isShippingAvailable(City city, int weight, int hours, Transport obj){
         shippingIsAvailable = obj.getPrice(city) != 0
                 && city.getDistanceKm() / obj.getSpeed() <= hours
                 && obj.getCapacity() >= weight

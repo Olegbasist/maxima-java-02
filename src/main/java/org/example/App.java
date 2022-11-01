@@ -141,7 +141,7 @@ public class App {
 //        System.out.println("Вот какие транспорты получились:");
 //        logistics.listOfVehicles();
         System.out.println("Самый дешевый транспорт по версии Logistics, будет: ");
-        System.out.println(logistics.getShipping(city2,8000,24).getName());
+        System.out.println(logistics.getShipping(city2,800,24).getName());
 
 // Добавляем все вихикл в ЭррейЛист и затем ищем минимум
 
