@@ -1,10 +1,10 @@
 package org.example;
 
 //  02.11.2022  Описать класс TransportFactory со методом Transport getTransport(City city, int weight, int hours)
-//  TODO: 02.11.2022 который будет в зависимости от города, веса и срока доставки конструировать нам транспортное средство по следующим правилам:
+//  02.11.2022 который будет в зависимости от города, веса и срока доставки конструировать нам транспортное средство по следующим правилам:
 
-//       - Название и стоимость — для самолета, корабля и грузовика различные константы, выберите из сами, задайте их в начале метода.
-//     TODO:  - Если скорость, необходимая для выполнения заказа до 40 км/ч и город на воде, то корабль.
+//      - Название и стоимость — для самолета, корабля и грузовика различные константы, выберите их сами, задайте их в начале метода.
+//      - Если скорость, необходимая для выполнения заказа до 40 км/ч и город на воде, то корабль.
 //      Если нужна скорость выше 120 км/ч, и есть аэропорт, то самолет.
 //      В остальных случаях — грузовик.
 
@@ -28,8 +28,8 @@ public class TransportFactory {
         final int speedMultiplicity = 10;
 
         return requiredSpeed<= speedMultiplicity ? speedMultiplicity
-                : requiredSpeed/ speedMultiplicity == requiredSpeed% speedMultiplicity ? (int) requiredSpeed //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
-                : (int) (Math.ceil((float) requiredSpeed/ speedMultiplicity)* speedMultiplicity);
+                : requiredSpeed / speedMultiplicity == requiredSpeed % speedMultiplicity ? (int) requiredSpeed //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
+                : (int) (Math.ceil(requiredSpeed / speedMultiplicity)* speedMultiplicity);
     }
 
     private int getRightCapacity (int weight){
@@ -37,14 +37,14 @@ public class TransportFactory {
         final int weightMultiplicity = 500;
 
         return weight <= weightMultiplicity ? weightMultiplicity
-                : (float) weight/ weightMultiplicity == weight% weightMultiplicity ? weight //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
+                : (float) weight / weightMultiplicity == weight % weightMultiplicity ? weight //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
                 : (int) (Math.ceil((float) weight/ weightMultiplicity))* weightMultiplicity;
     }
 
     private Transport getTruck (int capacity, int speed ){
 
         final float costOfKm = 2.5f;
-        final String trackName = "Автопоезд 'Нарядный купальщик'";
+        final String trackName = "Автопоезд 'Mad Max'";
 
         return new Truck(trackName,capacity, speed, costOfKm);
     }
