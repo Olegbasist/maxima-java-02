@@ -144,7 +144,11 @@ public class App {
             System.out.println("Текущая минимальная стоимость: " +minCostOfDelivery);
             System.out.println("Текущий самый дешевый транспорт :" +cheapestVehicle);
             System.out.println("");*/
-        
+
+        System.out.println("Создаем транспорт:");
+        TransportFactory transportFactory = new TransportFactory();
+        Transport transport = transportFactory.getTransport(city, 1456, 78);
+        System.out.println(transport.getName()+ " Вместимость: " + transport.getCapacity()+ " Скорость: " + transport.getSpeed());
 
         }
 }
