@@ -147,7 +147,7 @@ public class App {
 
         System.out.println("Создаем транспорт:");
         TransportFactory transportFactory = new TransportFactory();
-        Transport transport = transportFactory.getTransport(city, 155, 78);
+        Transport transport = transportFactory.getTransport(city2, 155, 1);
         System.out.println(transport.getName()+ " Вместимость: " + transport.getCapacity()+ " Скорость: " + transport.getSpeed());
 
 

@@ -15,15 +15,16 @@ package org.example;
 public class TransportFactory {
 
     public Transport getTransport(City city, int weight, int hours){
+
         float requiredSpeed = (float) city.getDistanceKm()/hours;
 
-
-
-        return getTruck(getRightCapacity(weight), getRightSpeed(requiredSpeed));
+        return requiredSpeed < 40 && city.isOnWater() ? getShip(getRightCapacity(weight), getRightSpeed(requiredSpeed))
+                : requiredSpeed > 120 && city.isHasAirport() ? getPlane(getRightCapacity(weight), getRightSpeed(requiredSpeed))
+                : getTruck(getRightCapacity(weight), getRightSpeed(requiredSpeed));
     }
 
     private int getRightSpeed (float requiredSpeed){
-        
+
         final int speedMultiplicity = 10;
 
         return requiredSpeed<= speedMultiplicity ? speedMultiplicity
