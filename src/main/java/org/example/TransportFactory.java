@@ -17,27 +17,33 @@ public class TransportFactory {
     private final int speedMultiplicity = 10;
 
     public Transport getTransport(City city, int weight, int hours){
-        double requiredSpeed = city.getDistanceKm()/hours;
+        float requiredSpeed = city.getDistanceKm()/hours;
 
 
 
-        return makeTruck(weight, requiredSpeed);
+        return makeTruck(getRightCapacity(weight), getRightSpeed(requiredSpeed));
     }
 
-    private Transport makeTruck (int weight, double requiredSpeed ){
-
-
-        int capacity = weight <= weightMultiplicity ? weightMultiplicity
-                : (float) weight/weightMultiplicity == weight%weightMultiplicity ? weight //Кажется бессмыссленно ... всё равно 2 операции - можно было просто посчитать
-                : (int) (Math.ceil((float) weight/weightMultiplicity))*weightMultiplicity;
+    private int getRightSpeed (float requiredSpeed){
         int speed = requiredSpeed<=speedMultiplicity? speedMultiplicity
-                : requiredSpeed/speedMultiplicity == requiredSpeed%speedMultiplicity ? (int) requiredSpeed
+                : requiredSpeed/speedMultiplicity == requiredSpeed%speedMultiplicity ? (int) requiredSpeed //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
                 : (int) (Math.ceil((float) requiredSpeed/speedMultiplicity)*speedMultiplicity);
+        return speed;
+    }
+
+    private int getRightCapacity (int weight){
+        int capacity = weight <= weightMultiplicity ? weightMultiplicity
+                : (float) weight/weightMultiplicity == weight%weightMultiplicity ? weight //Кажется бессмысленно лишний код... всё равно 2 операции - можно было просто посчитать последним условием
+                : (int) (Math.ceil((float) weight/weightMultiplicity))*weightMultiplicity;
+        return capacity;
+    }
+
+    private Transport makeTruck (int capacity, int speed ){
+
         final float costOfKm = 2.5f;
-
         final String trackName = "Автопоезд 'Нарядный купальщик'";
-
         return new Truck(trackName,capacity, speed, costOfKm);
     }
+
 
 }
