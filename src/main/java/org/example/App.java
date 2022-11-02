@@ -34,16 +34,16 @@ public class App {
         /*Transport [] vehicles = new Transport[5];
             vehicles[0] = new Truck("Грузовик", 5000, 85, 2.3f);
             vehicles[1] = new Truck("Тягач с полуприцепом", 12000, 68, 1.7f);
-            vehicles[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
+            vehicles[2] = new Truck("Грузовичок", 2000, 90, 1.4f);
             vehicles[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 12000000, 25, 0.79f);
             vehicles[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
 
             for (Transport obj: vehicles){
                 System.out.println(obj.getName()+ " " +obj.getCapacity()+ " " +obj.getSpeed()+ " " +obj.getCostOfKm());
-                System.out.print("Стоимость перезвозки 1Кг груза до " +city.getName()+ " составит ");
+                System.out.print("Стоимость перевозки 1Кг груза до " +city.getName()+ " составит ");
                 System.out.print(obj.getPrice(city));
                 System.out.println(" рублей");
-                System.out.print("Стоимость перезвозки 1Кг груза до " +city2.getName()+ " составит ");
+                System.out.print("Стоимость перевозки 1Кг груза до " +city2.getName()+ " составит ");
                 System.out.print(obj.getPrice(city2));
                 System.out.println(" рублей");
                 System.out.println("--------------------------------------------------");
@@ -72,7 +72,7 @@ public class App {
         Transport [] vehicles = new Transport[6];
         vehicles[0] = new Truck("Грузовик", 5000, 85, 2.3f);
         vehicles[1] = new Truck("Тягач с полуприцепом", 12000, 68, 1.7f);
-        vehicles[2] = new Truck("Грузовичёк", 2000, 90, 1.4f);
+        vehicles[2] = new Truck("Грузовичок", 2000, 90, 1.4f);
         vehicles[3] = new Ship("Сухогруз ''Доктор наук профессор Шварценгольд''", 1200000, 25, 0.79f);
         vehicles[4] = new Plane("Грузовой самолёт", 5500, 900, 4.2f);
         vehicles[5] = new Plane("Маленький самолёт", 1200, 750, 5.5f);
@@ -147,7 +147,7 @@ public class App {
 
         System.out.println("Создаем транспорт:");
         TransportFactory transportFactory = new TransportFactory();
-        Transport transport = transportFactory.getTransport(city, 1501, 178);
+        Transport transport = transportFactory.getTransport(city, 155, 78);
         System.out.println(transport.getName()+ " Вместимость: " + transport.getCapacity()+ " Скорость: " + transport.getSpeed());
 
 
