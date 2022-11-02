@@ -11,9 +11,25 @@ package org.example;
 
 public class TransportFactory {
 
-    Transport getTransport(City city, int weight, int hours){
+    String trackName = "Автопоезд 'Нарядный купальщик'";
+    String shipName = "Сухогруз 'Доктор наук профессор Шварценгольд'";
+    String airplaneName = "Грузовой самолёт 'Сибирский буревестник'";
 
-        return null;
+    public Transport getTransport(City city, int weight, int hours){
+        double requiredSpeed = city.getDistanceKm()/hours;
+
+
+
+        return makeTruck(weight, requiredSpeed);
+    }
+
+    private Transport makeTruck (int weight, double requiredSpeed ){
+
+        int capacity = (int) (Math.ceil(weight/500))*500;
+        int speed = (int) (Math.ceil(requiredSpeed/10)*10);
+        float costOfKm = 2.5f;
+
+        return new Truck(trackName,capacity, speed, costOfKm);
     }
 
 }
