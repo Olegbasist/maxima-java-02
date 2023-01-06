@@ -11,17 +11,11 @@ public abstract class Transport implements Repairable
     private float costOfKm;//Стоимость километра
     private boolean isRepairing;//Состояние на ремонте
 
-    /*private boolean needAirport;//Требуется аэропорт
-    private boolean needWater;//Требуется вода
+    //Пустой конструктор для аннотации lombok в модуле 4
 
-    public boolean isNeedAirport() {
-        return needAirport;
+
+    public Transport() {
     }
-
-    public boolean isNeedWater() {
-        return needWater;
-    }*/
-
 
     // Конструктор - один за всех
     public Transport(String name, int capacity, int speed, float costOfKm) {
