@@ -10,22 +10,35 @@ package org.example;
 //       - Скорость должна равняться скорости, необходимой для прибытия в срок, округленной вверх до ближайшего десятка.
 //       - Если вес кратен 500 и или скорость кратна 10, то округлять не нужно.
 
-import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.junit.Before;
+import org.junit.Test;
 
 
 public class TransportFactoryTest {
+    private TransportFactory transportFactory = new TransportFactory();
+    private City city; //= new City("City",1);
+    private Transport transport; // = transportFactory.getTransport(city,1,1);
 
-    private City city;
-    private TransportFactory transportFactory;
     @Before
     public void prepare () {
         city = new City("City",1);
-        //transportFactory = new TransportFactory();
+        transport = getTransport(city,1,1);
+    }
+    private Transport getTransport (City city, int weight, int hours) {
+        return transportFactory.getTransport(city,weight,hours);
     }
 
-
+    /*@Test
+    public void shouldGetTrack () {
+        //Transport transport = transportFactory.getTransport(city,1,1);
+        System.out.println(transport);
+        //System.out.println(getTransport(city,1,1).getName());
+    }*/
+    @Test
+    public void shouldBeNotNulCity () {
+        
+    }
 
 }
