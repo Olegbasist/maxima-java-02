@@ -6,16 +6,13 @@ package org.example;
 //      Если нужна скорость выше 120 км/ч, и есть аэропорт, то самолет.
 //      В остальных случаях — грузовик.
 
-// TODO: - Грузоподъемность должна равняться весу груза, округленного вверх до числа кратного 500.
+//       - Грузоподъемность должна равняться весу груза, округленного вверх до числа кратного 500.
 //       - Скорость должна равняться скорости, необходимой для прибытия в срок, округленной вверх до ближайшего десятка.
 //       - Если вес кратен 500 и или скорость кратна 10, то округлять не нужно.
 
 
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.sound.midi.Track;
-
 import static org.junit.Assert.*;
 
 public class TransportFactoryTest {
@@ -48,7 +45,7 @@ public class TransportFactoryTest {
     }
     @Test
     public void shouldMakeShip () {
-        Ship ship = new Ship("Ship",1,1,1);
+        city.setOnWater(true);
         assertSame(Ship.class, getTransportFromTransportFactory().getClass());
     }
     @Test
@@ -56,6 +53,14 @@ public class TransportFactoryTest {
         city.setHasAirport(true);
         city.setDistanceKm(121);
         assertSame(Plane.class, getTransportFromTransportFactory().getClass());
+    }
+    @Test
+    public void shouldRoundCapacity () {
+        assertEquals(500,transport.getCapacity());
+    }
+    @Test
+    public void shouldRoundSpeed () {
+        assertEquals(10,transport.getSpeed());
     }
 
 }
