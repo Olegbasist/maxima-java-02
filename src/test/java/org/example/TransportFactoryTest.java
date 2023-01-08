@@ -16,9 +16,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TransportFactoryTest {
-    private TransportFactory transportFactory; //= new TransportFactory();
-    private City city; //= new City("City",1);
-    private Transport transport; // = transportFactory.getTransport(city,1,1);
+    private TransportFactory transportFactory;
+    private City city;
+    private Transport transport;
 
     @Before
     public void prepare () {
