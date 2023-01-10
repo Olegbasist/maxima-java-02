@@ -33,7 +33,7 @@ public class City {
     public void printDistance() {
         System.out.println(name + " находится на расстоянии " + distanceKm + " Км.");
         if (hasAirport){
-        System.out.print("В городе имется аэропорт");
+        System.out.print("В городе имеeтся аэропорт");
         }
         else {
             System.out.print("В городе нет аэропорта");
