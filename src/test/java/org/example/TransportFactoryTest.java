@@ -34,25 +34,25 @@ public class TransportFactoryTest {
     }
 
     @Test
-    public void shouldBeNotNulCity () {
+    public void shouldReturnNotNulCity () {
         assertNotNull(city);
     }
     @Test
-    public void shouldBeNotNullTransport () {
+    public void shouldReturnNotNullTransport () {
         assertNotNull(transport);
     }
     @Test
-    public void shouldMakeTrack () {
+    public void shouldReturnObjectTrack () {
         city.setOnWater(false);
         assertSame(Truck.class, getTransportFromTransportFactory().getClass());
     }
     @Test
-    public void shouldMakeShip () {
+    public void shouldReturnObjectShip () {
         city.setOnWater(true);
         assertSame(Ship.class, getTransportFromTransportFactory().getClass());
     }
     @Test
-    public void shouldMakePlane () {
+    public void shouldReturnObjectPlane () {
         city.setHasAirport(true);
         city.setDistanceKm(121);
         assertSame(Plane.class, getTransportFromTransportFactory().getClass());
